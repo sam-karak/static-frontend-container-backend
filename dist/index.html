@@ -39,6 +39,9 @@
 
           try {
             const response = await fetch('/api/widgets');
+            if (!response) {
+                    return new Response("Widget not found", { status: 404 });
+                }
             if (!response.ok) {
               throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
