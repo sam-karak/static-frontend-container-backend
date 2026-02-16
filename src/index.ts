@@ -18,6 +18,9 @@ export default {
       // note: "getRandom" to be replaced with latency-aware routing in the near future
       // this is a temporary helper
       const containerInstance = await getRandom(env.BACKEND, INSTANCE_COUNT);
+      if (!containerInstance) {
+          return new Response("Container instance not found", { status: 404 });
+          }
       return containerInstance.fetch(request);
     }
     return new Response("Not Found", { status: 404 });
