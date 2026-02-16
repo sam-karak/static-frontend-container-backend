@@ -26,7 +26,8 @@
 	"durable_objects": {
 		"bindings": [
 			{
-				"class_name": "Backend"
+				"class_name": "Backend",
+                "name":"Backend" 
 			}
 		]
 	},
